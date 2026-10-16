@@ -12,6 +12,7 @@ is a drop-in change.
 """
 
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Optional
 
 import numpy as np
@@ -54,7 +55,21 @@ class PlayerDetector:
             YOLO,
         )  # imported lazily so the API can boot without torch installed
 
-        self.model = YOLO(model_path or settings.YOLO_MODEL_PATH)
+        model_str = model_path or settings.YOLO_MODEL_PATH
+        if not Path(model_str).is_file():
+            candidates = [
+                Path(model_str),
+                Path(__file__).resolve().parents[2] / model_str,
+                Path(__file__).resolve().parents[3] / model_str,
+                settings.WEIGHTS_DIR / model_str,
+                Path(__file__).resolve().parents[2] / "weights" / model_str,
+            ]
+            for cand in candidates:
+                if cand.is_file():
+                    model_str = str(cand)
+                    break
+
+        self.model = YOLO(model_str)
         self.confidence = (
             confidence
             if confidence is not None
