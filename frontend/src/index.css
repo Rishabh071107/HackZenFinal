@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-pitch-950 text-slate-100 font-sans;
+}
+
+.card {
+  @apply bg-pitch-900/70 border border-pitch-700/60 rounded-2xl p-6 backdrop-blur;
+}
+
+.stat-value {
+  @apply text-3xl font-bold text-accent-400;
+}
+
+.stat-label {
+  @apply text-xs uppercase tracking-wide text-slate-400;
+}

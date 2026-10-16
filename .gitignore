@@ -1,0 +1,70 @@
+# Dependencies
+node_modules/
+venv/
+.venv/
+env/
+ENV/
+
+# Build and Output
+dist/
+build/
+bin/
+obj/
+out/
+.next/
+.cache/
+*.tsbuildinfo
+
+# Databases and Local Volumes
+pgdata/
+*.log
+pg.log
+pg_ctl.log
+*.db
+*.sqlite*
+backend/*.db
+
+# Application Data & Uploads
+backend/storage/videos/*
+backend/storage/heatmaps/*
+backend/storage/trajectories/*
+backend/storage/thumbnails/*
+!backend/storage/videos/.gitkeep
+!backend/storage/heatmaps/.gitkeep
+!backend/storage/trajectories/.gitkeep
+!backend/storage/thumbnails/.gitkeep
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Python Caches & Compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# YOLO & CV Models (large weights)
+*.pt
+yolo*.pt
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

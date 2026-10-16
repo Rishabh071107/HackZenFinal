@@ -1,0 +1,43 @@
+# Ignore local python environment and caches
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Ignore large YOLO model weights
+*.pt
+yolo11*.pt
+
+# Ignore local sqlite, database, or postgres files
+pgdata/
+*.db
+*.sqlite
+*.log
+pg.log
+pg_ctl.log
+
+# Ignore local file storage uploads/outputs
+storage/videos/*
+storage/heatmaps/*
+storage/trajectories/*
+storage/thumbnails/*
+!storage/videos/.gitkeep
+!storage/heatmaps/.gitkeep
+!storage/trajectories/.gitkeep
+!storage/thumbnails/.gitkeep
+
+# Ignore Git files and documentation
+.git/
+.github/
+.gitignore
+README.md
+LICENSE
+CONTRIBUTING.md
+
+# Ignore local configuration files
+.env
